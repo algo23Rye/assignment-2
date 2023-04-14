@@ -16,7 +16,6 @@ indicator calculated from bar data.
 f_p = File_process()
 dp = Data_process()
 
-feature_name_ = 'money_skew'
 feature_analysis_path = makedir(r"E:/研究生课程代码/algorithm trading/High_Frequent_factor/")
 
 
@@ -66,7 +65,7 @@ class Indicator:
         r = (data.groupby('Ticker').apply(lambda x: self.calculate_logr(x)).stack(dropna = False)).to_frame()
         r.columns = ['logr']
         rkurtosis = r['logr'].groupby('Ticker').apply(
-            lambda x: (((x ** 4).sum()) * len(x)) / (x ** 2).sum()).to_frame()
+            lambda x: (((x ** 4).sum()) * len(x)) / ((x ** 2).sum()) ** 2).to_frame()
 
         rkurtosis.dropna(inplace = True)
         rkurtosis.columns = ['Rkurtosis']
@@ -120,15 +119,14 @@ class Calculation:
 #
 start_date = '20160104'
 end_date = '20240101'
-# data_list = f_p.get_filelist_between_dates(os.listdir(bar_data_path), start_date, end_date)
-# Calculation.get_features(bar_data_path,data_list, feature_dict)
+
 if __name__ == '__main__':
     cpu_num = multiprocessing.cpu_count() - 4
     data_list = f_p.get_filelist_between_dates(os.listdir(bar_data_path), start_date, end_date)
     split = Get_outcome.split_list(data_list, cpu_num)
-    pool = multiprocessing.Pool(processes=cpu_num)
+    pool = multiprocessing.Pool(processes = cpu_num)
     for filelist in split:
         train = pool.apply_async(Calculation.get_features,
-                                 args=(bar_data_path,data_list, feature_dict))
+                                 args = (bar_data_path, filelist, feature_dict))
     pool.close()
     pool.join()
