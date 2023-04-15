@@ -54,7 +54,7 @@
 ![Rkurtosis_Huber_Log_TCap_Industry.png](Image/alpha_nav/Rkurtosis_Huber_Log_TCap_Industry.png?t=1681550662960)
 
 
-### 二、Rskurtosis指标IC和IR表现
+### 二、Rkurtosis指标IC和IR表现
 
 IR为年化指标，IC为日度指标。
 
