@@ -6,8 +6,10 @@ plt.switch_backend('agg')
 
 feature_analysis_path = makedir(r"E:/研究生课程代码/algorithm trading/High_Frequent_factor/")
 global_analysis_path = makedir(feature_analysis_path + "Analysis/")
-absolute_raw_stock_path = r"E:/Quant Practice/Raw Data/StockUniverse/"
 
+# all stocks
+absolute_raw_stock_path = r"E:/Quant Practice/Raw Data/StockUniverse/"
+# merge data path for neutraliztaion
 neutral_merge_path = r"neutral_merge_data/"
 # group data groupby by features
 group_data_path = r"group_data/"
@@ -29,7 +31,6 @@ outcome_image_path = makedir(global_analysis_path + r"Image/")
 alpha_nav_plot_path = makedir(outcome_image_path + r"alpha_nav/")
 
 startdate = "20160104"
-
 
 def get_outcome(reg_method):
     for feature_name in os.listdir(feature_analysis_path):
@@ -63,9 +64,8 @@ for reg_method in ["OLS", "Huber"]:
     get_outcome(reg_method)
 
 
-# because Rkurtosis performs well, so get its IR IC evaluation, "Huber"
-corr_all_stock = pd.read_csv(
-    r'E:\研究生课程代码\algorithm trading\High_Frequent_factor\Analysis\Rkurtosis\Huber\corr\Rkurtosis_residual.corr.csv',
+# because Rkurtosis performs well, so get its IR IC evaluation
+corr_all_stock = pd.read_csv(r'E:\研究生课程代码\algorithm trading\High_Frequent_factor\Analysis\Rkurtosis\Huber\corr\Rkurtosis_residual.corr.csv',
     parse_dates = True, index_col = 0)
 
 Get_feature_outcome.get_evaluation_alpha_IC_IR(corr_all_stock).to_csv(makedir("./Rkurtosis_eval/") + "eval.csv")
