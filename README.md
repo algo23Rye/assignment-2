@@ -10,17 +10,16 @@
 4. 在分组回测时，这里把三个因子对上下5%的值进行winsor处理，然后进行了市值和行业中性化（用OLS和Huber两种回归方法）。
 5. 为了更好地观察分组表现，这里画出各组alpha净值曲线（组内股票等权），（每只股票的alpha即每天每只股票收益率减去当天股票池所有股票收益率的均值）。在计算因子的IC和IR时，也是用股票的alpha和因子值来计算。
 
-
 ## 因子描述性统计
 
 1. 全样本因子分布(winsor后）
+   注：这里的RV扩大了10000倍。
 
 ![RV.png](Image/feature_plot/RV.png?t=1681550084826)
 
 ![RSkew.png](Image/feature_plot/RSkew.png?t=1681550116888)
 
 ![Rkurtosis.png](Image/feature_plot/Rkurtosis.png?t=1681550165241)
-
 
 2. 因子分位数时间序列图
 
@@ -29,7 +28,6 @@
 ![RSkew.png](Image/feature_plot/RSkew.png?t=1681550337793)
 
 ![Rkurtosispercentage.png](Image/feature_plot/Rkurtosispercentage.png?t=1681550406660)
-
 
 ## 研究结果
 
@@ -52,7 +50,6 @@
 ![RSkew_Huber_Log_TCap_Industry.png](Image/alpha_nav/RSkew_Huber_Log_TCap_Industry.png?t=1681550642824)
 
 ![Rkurtosis_Huber_Log_TCap_Industry.png](Image/alpha_nav/Rkurtosis_Huber_Log_TCap_Industry.png?t=1681550662960)
-
 
 ### 二、Rskurtosis指标IC和IR表现
 
