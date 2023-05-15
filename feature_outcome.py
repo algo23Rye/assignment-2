@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
-import Trading_date
+import trading_date
 import os
-from File_processing import File_process, makedir
-from Features_analysis import features_analysis
-from Use_func_and_store_outcome import Get_outcome
+from file_processing import File_process, makedir
+from features_analysis import features_analysis
+from use_func_and_store_outcome import Get_outcome
 
-td = Trading_date.Trading_date()
+td = trading_date.Trading_date()
 f_p = File_process()
 fa = features_analysis()
 

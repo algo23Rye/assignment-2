@@ -1,9 +1,9 @@
 import pandas as pd
-from Data_processing_min_bar import Data_process, bar_data_path
+from data_processing_min_bar import Data_process, bar_data_path
 import os
 import multiprocessing
-from Use_func_and_store_outcome import Get_outcome
-from File_processing import makedir, File_process
+from use_func_and_store_outcome import Get_outcome
+from file_processing import makedir, File_process
 import numpy as np
 import warnings
 

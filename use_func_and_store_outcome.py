@@ -1,8 +1,8 @@
 import os
 
 import pandas as pd
-import Trading_date
-import File_processing
+import trading_date
+import file_processing
 
 td = Trading_date.Trading_date()
 f_p = File_processing.File_process()

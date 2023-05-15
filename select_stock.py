@@ -1,12 +1,12 @@
 import pandas as pd
 import os
-import Trading_date
+import trading_date
 import multiprocessing
-from File_processing import makedir, File_process
-from Use_func_and_store_outcome import Get_outcome
+from file_processing import makedir, File_process
+from use_func_and_store_outcome import Get_outcome
 
 f_p = File_process()
-td = Trading_date.Trading_date()
+td = trading_date.Trading_date()
 
 path = r"E:/Quant Practice/Raw Data/"
 stock_data_path = path + r"/StockUniverse/"

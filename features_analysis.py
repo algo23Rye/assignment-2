@@ -1,15 +1,15 @@
 import pandas as pd
 import numpy as np
-import Trading_date
+import trading_date
 import os
-from File_processing import File_process
+from file_processing import File_process
 from sklearn.linear_model import LinearRegression, HuberRegressor
 from pandas import DataFrame, Series
 import warnings
 
 warnings.filterwarnings('ignore')
 
-td = Trading_date.Trading_date()
+td = trading_date.Trading_date()
 f_p = File_process()
 
 
